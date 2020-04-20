@@ -42,6 +42,8 @@ func (af *RF) Init(name string, act, src etensor.Tensor) {
 
 // Reset reinitializes the Sum accumulators -- must have called Init first
 func (af *RF) Reset() {
+	af.RF.SetZeros()
+	af.NormRF.SetZeros()
 	af.SumProd.SetZeros()
 	af.SumSrc.SetZeros()
 }
